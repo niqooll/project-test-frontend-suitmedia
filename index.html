@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suitmedia Portal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="navbar" id="navbar">
+      <div class="logo">
+        <img src="img/logo.png" alt="Suitmedia Logo" />
+      </div>
+      <ul class="nav-menu">
+        <li><a href="#" class="menu-item">Work</a></li>
+        <li><a href="#" class="menu-item">About</a></li>
+        <li><a href="#" class="menu-item">Services</a></li>
+        <li><a href="#" class="menu-item active">Ideas</a></li>
+        <li><a href="#" class="menu-item">Careers</a></li>
+        <li><a href="#" class="menu-item">Contact</a></li>
+      </ul>
+    </header>
+
+    <!-- Banner Section-->
+    <section class="banner">
+      <div class="banner-content">
+        <h1>Ideas</h1>
+        <p>Where all our great things begin</p>
+      </div>
+      <div class="banner-background-wrapper">
+        <div class="banner-background"></div>
+      </div>
+    </section>
+
+    <!-- Content Section -->
+    <div class="content">
+      <!-- Filter Controls -->
+      <div class="controls">
+        <div class="status">
+          <p>
+            Showing <span id="current-range">1 - 10</span> of
+            <span id="total-items">100</span>
+          </p>
+        </div>
+        <div class="filter-options">
+          <label for="show-per-page">Show per page:</label>
+          <select id="show-per-page">
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="50">50</option>
+          </select>
+
+          <label for="sort-by">Sort by:</label>
+          <select id="sort-by">
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Card List -->
+      <div class="card-list" id="card-list">
+        <!-- Cards will be dynamically generated here -->
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination" id="pagination">
+        <!-- Pagination buttons will be dynamically generated -->
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

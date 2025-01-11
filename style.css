@@ -1,0 +1,283 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Header */
+header.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 20px;
+  background-color: rgba(234, 98, 38, 1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 60px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: top 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+}
+
+header.navbar.transparent {
+  background-color: rgba(234, 98, 38, 0.8);
+  opacity: 0.9;
+}
+
+header.navbar.hidden {
+  top: -60px;
+  opacity: 0;
+}
+
+.logo img {
+  height: 55px;
+  margin-left: 60px;
+}
+
+.nav-menu {
+  list-style-type: none;
+  margin: 0;
+  margin-right: 6rem;
+  padding: 0;
+  display: flex;
+}
+
+.nav-menu li {
+  margin: 0 15px;
+}
+
+.menu-item {
+  color: #fff;
+  font-size: 16px;
+  padding: 5px 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.menu-item:hover {
+  color: #ddd;
+}
+
+.menu-item.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+  margin: auto;
+  height: 2px;
+  width: 40%;
+  background-color: #fff;
+}
+
+.menu-item.active {
+  font-weight: semibold;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+  transition: all 0.3s ease;
+}
+
+.menu-item.active:hover {
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+  transform: translateY(-3px);
+}
+
+.menu-item {
+  transition: all 0.3s ease;
+}
+
+.banner {
+  position: relative;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 3;
+  color: #fff;
+  text-align: center;
+}
+
+.banner-content h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.banner-content p {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.banner-background-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(0 0, 100% 0, 100% 65%, 0 100%);
+  z-index: 1;
+  overflow: hidden;
+}
+
+.banner-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("img/background.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  transform: translateY(0);
+  transition: transform 0.2s ease-out;
+}
+
+.content {
+  padding: 60px 150px;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+
+.status p {
+  margin: 0;
+}
+
+/* Filter Options Box */
+.filter-options {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.filter-options label {
+  font-size: 14px;
+  color: #333;
+}
+
+.filter-options select {
+  padding: 5px 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.filter-options select:hover {
+  border-color: #f60; /* Change border color on hover */
+}
+
+.filter-options select:focus {
+  outline: none;
+  border-color: #f60; /* Highlight border when focused */
+}
+
+/* Optional: Add a margin between the filter options */
+.filter-options label,
+.filter-options select {
+  margin-right: 10px;
+}
+
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 50px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Card List */
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 40px;
+  transition: all 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 0 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-meta {
+  font-size: 15px;
+  color: #555;
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Elevate the card when hovered */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add shadow for the raised effect */
+}
+
+.card:hover .card-meta {
+  font-weight: 700;
+  color: #f60; /* Change the color of the date when hovered */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  margin: 0 2px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background: #f60;
+  color: #fff;
+}
